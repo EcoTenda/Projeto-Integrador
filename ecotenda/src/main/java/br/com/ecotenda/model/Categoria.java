@@ -18,13 +18,11 @@ public class Categoria {
 	
 	@NotNull(message = "Valor obrigatorio!")
 	@Size(min = 2, max = 30)
-	private String categoria_produtos;
+	private String categoriaProdutos;
 	
 	@Size(min = 5, max = 200)
 	private String descricao;
 
-	
-	
 	public long getId() {
 		return id;
 	}
@@ -33,12 +31,12 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getCategoria_produtos() {
-		return categoria_produtos;
+	public String getCategoriaProdutos() {
+		return categoriaProdutos;
 	}
 
-	public void setCategoria_produtos(String categoria_produtos) {
-		this.categoria_produtos = categoria_produtos;
+	public void setCategoriaProdutos(String categoriaProdutos) {
+		this.categoriaProdutos = categoriaProdutos;
 	}
 
 	public String getDescricao() {
@@ -47,10 +45,6 @@ public class Categoria {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
+	}	
 	
-	
-	
-		
-
 }

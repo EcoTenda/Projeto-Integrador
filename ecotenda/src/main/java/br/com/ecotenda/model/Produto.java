@@ -30,7 +30,7 @@ public class Produto {
 	
 	@NotNull(message = "Campo valor obrigatório")
 	@Positive
-	private double valor; 
+	private double valor;
 	
 	@NotNull(message = "Campo descrição obrigatório")
 	@Size(min = 5, max = 200)

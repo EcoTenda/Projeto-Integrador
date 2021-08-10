@@ -69,7 +69,7 @@ public class UsuarioService {
 
 	}
 
-	public Optional<UserLogin> Logar(Optional<UserLogin> userLogin) {
+	public Optional<UserLogin> logar(Optional<UserLogin> userLogin) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		Optional<Usuario> usuario = usuarioRepository.findByEmail(userLogin.get().getEmail());

@@ -52,9 +52,9 @@ public class UsuarioController {
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
 
-		Optional<Usuario> usuarioResp = userService.cadastrarUsuario(usuario);
+		Usuario usuarioResp = userService.cadastrarUsuario(usuario);
 		try {
-			return ResponseEntity.ok(usuarioResp.get());
+			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioResp);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().build();
 		}

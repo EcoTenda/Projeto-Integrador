@@ -41,12 +41,12 @@ public class Produto {
 	private String garantia;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("tb_produtos")
-	private Categoria tb_categorias;
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("tb_produtos")
-	private Usuario tb_usuarios;
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
 
 	public long getId() {
 		return id;
@@ -96,11 +96,20 @@ public class Produto {
 		this.garantia = garantia;
 	}
 
-	public Categoria getTb_categorias() {
-		return tb_categorias;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setTb_categorias(Categoria tb_categorias) {
-		this.tb_categorias = tb_categorias;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

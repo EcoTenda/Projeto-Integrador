@@ -13,7 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -41,17 +40,17 @@ public class Usuario {
 	private String senha;
 	
 	@NotNull(message = "Campo data de nascimento obrigatório")
-	@JsonFormat(pattern="dd-MM-yyyy")
 	private LocalDate dataNascimento;
 
-	@JsonFormat(pattern="dd-MM-yyyy")
 	private LocalDate dataCriacaoConta = LocalDate.now();
 	
 	@NotNull(message = "Campo tipo do usuario obrigatório")
-	private String tipoUsuario;
+	private String tipo;
 	
-	@OneToMany(mappedBy = "tb_categorias", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tb_categorias")
+	private String foto;
+	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
 	private List<Produto>produto;
 
 	public List<Produto> getProduto() {
@@ -118,12 +117,20 @@ public class Usuario {
 		this.dataCriacaoConta = dataCriacaoConta;
 	}
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	

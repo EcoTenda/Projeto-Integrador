@@ -10,6 +10,6 @@ import br.com.ecotenda.model.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository <Categoria, Long> {
 	
-	public List<Categoria> findAllByCategoriaProdutosContainingIgnoreCase(String categoriaProdutos);
+	public List<Categoria> findAllByNomeContainingIgnoreCase(String nome);
 
 }

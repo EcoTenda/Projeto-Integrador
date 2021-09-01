@@ -24,14 +24,14 @@ public class Categoria {
 	
 	@NotNull(message = "Valor obrigatorio!")
 	@Size(min = 2, max = 30)
-	private String categoriaProdutos;
+	private String nome;
 
 	
 	@Size(min = 5, max = 200)
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tb_categorias", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tb_categorias")
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
 	private List<Produto>produto;
 	
 
@@ -43,12 +43,20 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getCategoriaProdutos() {
-		return categoriaProdutos;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setCategoriaProdutos(String categoriaProdutos) {
-		this.categoriaProdutos = categoriaProdutos;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
 	public String getDescricao() {

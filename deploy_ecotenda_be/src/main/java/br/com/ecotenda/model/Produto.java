@@ -40,6 +40,8 @@ public class Produto {
 	@Size(min = 5, max = 200)
 	private String garantia;
 	
+	private String imagem;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
@@ -111,5 +113,14 @@ public class Produto {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
 
 }
